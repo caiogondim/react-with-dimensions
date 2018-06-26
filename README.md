@@ -16,7 +16,7 @@ npm install --save react-with-dimensions
 
 ## Usage
 
-Pass a dimensions object as prop with all keys defined in [DOMRectReadOnly](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly).
+Decorated component will receive an addicional `dimensions` prop with all keys defined in [DOMRectReadOnly](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly).
 
 - `x`: The x coordinate of the DOMRect's origin
 - `y`: The y coordinate of the DOMRect's origin
