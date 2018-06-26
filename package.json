@@ -6,7 +6,8 @@
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server -d --config ./webpack.config.js --mode development",
     "build": "NODE_ENV=production babel lib -d build",
-    "lint": "eslint 'lib/*.js' webpack.config.js"
+    "lint": "eslint 'lib/*.js' webpack.config.js",
+    "prepublish": "npm run build"
   },
   "description": "",
   "main": "build/index.js",
