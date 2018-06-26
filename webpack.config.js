@@ -1,0 +1,60 @@
+const pkg = require('./package.json')
+const path = require('path')
+
+const env = process.env.NODE_ENV
+
+const config = {
+  output: {
+    path: __dirname + '/build',
+    publicPath: '/',
+    filename: 'index.js',
+    libraryTarget: 'umd'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader']
+      }
+    ]
+  },
+  resolve: {
+    extensions: ['*', '.js', '.jsx']
+  },
+  externals: {
+    react: {
+      commonjs: "react",
+      commonjs2: "react",
+      amd: "React",
+      root: "React"
+    },
+    'react-dom': {
+      commonjs: "react-dom",
+      commonjs2: "react-dom",
+      amd: "ReactDOM",
+      root: "ReactDOM"
+    }
+  },
+  resolve: {
+    alias: {
+      'react': path.resolve(__dirname, './node_modules/react'),
+      'react-dom': path.resolve(__dirname, './node_modules/react-dom')
+    }
+  }
+}
+
+if (env === 'development') {
+  config.entry = [
+    './example/index.js',
+  ]
+  config.devServer = {
+    contentBase: './example'
+  }
+} else if (env === 'production') {
+  config.entry = [
+    './lib/index.js',
+  ]
+}
+
+module.exports = config
