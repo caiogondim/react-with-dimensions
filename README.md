@@ -18,6 +18,15 @@ npm install --save react-with-dimensions
 
 Pass a dimensions object as prop with all keys defined in [DOMRectReadOnly](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly).
 
+- `x`: The x coordinate of the DOMRect's origin
+- `y`: The y coordinate of the DOMRect's origin
+- `width`: The width of the DOMRect
+- `height`: The height of the DOMRect
+- `top`: Returns the top coordinate value of the DOMRect (usually the same as `y`)
+- `right`: Returns the right coordinate value of the DOMRect (usually the same as `x` + `width`)
+- `bottom`: Returns the bottom coordinate value of the DOMRect (usually the same as `y` + `height`)
+- `left`: Returns the left coordinate value of the DOMRect (usually the same as `x`)
+
 ```js
 import React, { Component } from 'react'
 import withDimensions from 'react-with-dimensions'
