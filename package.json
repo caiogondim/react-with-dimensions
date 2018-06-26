@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server -d --config ./webpack.config.js --mode development",
-    "build": "NODE_ENV=production webpack --config ./webpack.config.js --mode production",
+    "build": "NODE_ENV=production babel lib -d build",
     "lint": "eslint 'lib/*.js' webpack.config.js"
   },
   "description": "",
@@ -19,6 +19,7 @@
     "react-dom": "^16.4.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.5",
     "babel-loader": "^7.1.4",
