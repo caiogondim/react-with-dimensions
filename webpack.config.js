@@ -1,5 +1,4 @@
-const pkg = require('./package.json')
-const path = require('path')
+/*eslint-env node */
 
 const env = process.env.NODE_ENV
 
@@ -20,28 +19,9 @@ const config = {
     ]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx'],
   },
-  externals: {
-    react: {
-      commonjs: "react",
-      commonjs2: "react",
-      amd: "React",
-      root: "React"
-    },
-    'react-dom': {
-      commonjs: "react-dom",
-      commonjs2: "react-dom",
-      amd: "ReactDOM",
-      root: "ReactDOM"
-    }
-  },
-  resolve: {
-    alias: {
-      'react': path.resolve(__dirname, './node_modules/react'),
-      'react-dom': path.resolve(__dirname, './node_modules/react-dom')
-    }
-  }
+
 }
 
 if (env === 'development') {
@@ -55,6 +35,20 @@ if (env === 'development') {
   config.entry = [
     './lib/index.js',
   ]
+  config.externals = {
+    'react': {
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'React',
+      root: 'React'
+    },
+    'react-dom': {
+      commonjs: 'react-dom',
+      commonjs2: 'react-dom',
+      amd: 'ReactDOM',
+      root: 'ReactDOM'
+    }
+  }
 }
 
 module.exports = config

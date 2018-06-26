@@ -1,10 +1,12 @@
 {
   "name": "react-with-dimensions",
   "version": "0.1.0",
+  "author": "Caio Gondim",
+  "license": "MIT",
   "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server --config ./webpack.config.js --mode development",
-    "build": "NODE_ENV=production webpack --config ./webpack.config.js --mode development",
-    "test": ""
+    "start": "NODE_ENV=development webpack-dev-server -d --config ./webpack.config.js --mode development",
+    "build": "NODE_ENV=production webpack --config ./webpack.config.js --mode production",
+    "lint": "eslint 'lib/*.js' webpack.config.js"
   },
   "description": "",
   "main": "build/index.js",
@@ -12,21 +14,25 @@
     "next-node": "^1.0.3",
     "resize-observer-polyfill": "^1.5.0"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.5",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^5.0.0",
+    "eslint-plugin-react": "^7.10.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "webpack": "^4.12.1",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4"
   },
-  "author": "Caio Gondim",
-  "license": "MIT",
   "babel": {
     "presets": [
       "env",

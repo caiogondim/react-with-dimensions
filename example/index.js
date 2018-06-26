@@ -1,3 +1,6 @@
+/* global window */
+/* eslint-disable react/prop-types */
+
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import withDimensions from '../lib';
@@ -14,8 +17,8 @@ class Box extends Component {
         margin: '10px',
         backgroundColor: '#ccc'
       }}>
-        <p>width: {this.props.dimensions && this.props.dimensions.width}</p>
-        <p>height: {this.props.dimensions && this.props.dimensions.height}</p>
+        <p>width: {this.props.dimensions && this.props.dimensions.width}px</p>
+        <p>height: {this.props.dimensions && this.props.dimensions.height}px</p>
       </div>
     )
   }
@@ -52,7 +55,7 @@ class App extends Component {
           display: 'flex'
         }}>
           {range(this.state.numOfBoxes).map((i) => {
-            return <BoxWithDimensions />
+            return <BoxWithDimensions key={i} />
           })}
         </div>
       </div>
@@ -60,4 +63,4 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, window.document.getElementById('app'));
