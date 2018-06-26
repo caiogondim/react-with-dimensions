@@ -6,8 +6,7 @@ const config = {
   output: {
     path: __dirname + '/build',
     publicPath: '/',
-    filename: 'index.js',
-    libraryTarget: 'umd'
+    filename: 'index.js'
   },
   module: {
     rules: [
