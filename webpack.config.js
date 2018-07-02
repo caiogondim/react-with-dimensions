@@ -1,13 +1,13 @@
 /*eslint-env node */
 
-const env = process.env.NODE_ENV
-
 const config = {
+  entry: [
+    './example/index.js',
+  ],
   output: {
     path: __dirname + '/build',
     publicPath: '/',
     filename: 'index.js',
-    libraryTarget: 'commonjs2'
   },
   module: {
     rules: [
@@ -18,36 +18,8 @@ const config = {
       }
     ]
   },
-  resolve: {
-    extensions: ['*', '.js', '.jsx'],
-  },
-
-}
-
-if (env === 'development') {
-  config.entry = [
-    './example/index.js',
-  ]
-  config.devServer = {
+  devServer: {
     contentBase: './example'
-  }
-} else if (env === 'production') {
-  config.entry = [
-    './lib/index.js',
-  ]
-  config.externals = {
-    'react': {
-      commonjs: 'react',
-      commonjs2: 'react',
-      amd: 'React',
-      root: 'React'
-    },
-    'react-dom': {
-      commonjs: 'react-dom',
-      commonjs2: 'react-dom',
-      amd: 'ReactDOM',
-      root: 'ReactDOM'
-    }
   }
 }
 
