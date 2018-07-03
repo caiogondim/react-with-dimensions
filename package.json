@@ -5,10 +5,11 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server -d --config ./webpack.config.js --mode development",
-    "build": "babel lib -d build",
+    "build": "babel lib -d build && cp lib/index.js build/index.js.flow",
     "lint": "eslint 'lib/*.js' webpack.config.js",
     "prepublish": "npm run build",
     "flow": "flow",
+    "type": "flow check",
     "test": "npm run lint && npm run flow",
     "coverage": "flow-coverage-report -i 'lib/*.js'"
   },

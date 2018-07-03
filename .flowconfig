@@ -1,12 +1,2 @@
-[ignore]
-
 [include]
 ./lib/index.js
-
-[libs]
-
-[lints]
-
-[options]
-
-[strict]
