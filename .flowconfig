@@ -1,7 +1,7 @@
 [ignore]
 
 [include]
-./lib/.*
+./lib/index.js
 
 [libs]
 
