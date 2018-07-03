@@ -7,7 +7,9 @@
     "start": "webpack-dev-server -d --config ./webpack.config.js --mode development",
     "build": "babel lib -d build",
     "lint": "eslint 'lib/*.js' webpack.config.js",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "flow": "flow",
+    "test": "npm run lint && npm run flow"
   },
   "description": "",
   "main": "build/index.js",
@@ -16,8 +18,8 @@
     "resize-observer-polyfill": "^1.5.0"
   },
   "peerDependencies": {
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -25,10 +27,13 @@
     "babel-eslint": "^8.2.5",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "eslint": "^5.0.0",
+    "eslint-plugin-flowtype": "^2.49.3",
     "eslint-plugin-react": "^7.10.0",
+    "flow-bin": "^0.75.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "webpack": "^4.12.1",
